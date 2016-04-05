@@ -1,0 +1,250 @@
+<!doctype html5>
+<html lang="en" data-ng-app="NemamAmmaBhagavan">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Nemam Amma Bhagavan Temple</title>
+			
+				
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Nemam Amma Bhgavan Temple">
+		<meta property="og:site_name" content="Nemam Amma Bhagavan Temple">
+		
+		<!-- Front-end libraries -->
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/moment.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="js/ui-calendar.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+        <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
+		<script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+		<script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+		<script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+		<script type="text/javascript" src="bower_components/angular-flash/src/services/flash-service.js"></script>
+		<script type="text/javascript" src="bower_components/angular-flash/src/directives/flash-alert-directive.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-bootstrap/src/ui_bootstrap.js"></script>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css">
+		<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+		
+		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" src="app/controllers/calendar.js"></script>
+		<script type="text/javascript" src="app/controllers/adminLogin.js"></script>
+		<script type="text/javascript" src="app/controllers/adminLogout.js"></script>
+		<script type="text/javascript" src="app/controllers/miracles.js"></script>
+		<script type="text/javascript" src="app/controllers/addMiracle.js"></script>
+		<script type="text/javascript" src="app/controllers/resources.js"></script>
+		<script type="text/javascript" src="app/controllers/addResource.js"></script>
+		<script type="text/javascript" src="app/services/auth.js"></script>
+		<script type="text/javascript" src="app/services/session.js"></script>
+
+		<meta name="generator" content="WordPress 3.9.1">
+				<style>
+					#nav li a:hover {
+						text-decoration: underline;
+					}
+					#nav li a {
+						text-decoration: none;
+						color: #111;
+						cursor: pointer;
+					}
+					.fc-day-header {
+						cursor:pointer;
+					}
+					section#Calendar {
+						margin-left:100px; 
+						margin-right:100px; 
+						font-size:16px;
+					}
+				
+					#admin_login a {
+						text-decoration: none;
+						color: #444;
+						cursor: pointer;
+						font-size: 13px;
+					}
+					.modal-dialog {
+						top: 120px;
+						height: 400px;
+						width: 700px;
+					}
+					.modal-title {
+						//width: 75%;
+						margin: 0 auto;
+						overflow: hidden;
+						font-size: 16px;
+						font-weight: normal;
+						line-height: 22px;
+						color: #666;
+						text-align: center;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+					.modal-header {
+						background: #FEEDAD;
+						border-bottom: 1px solid #e1e8ed;
+						border-radius: 6px 6px 0 0;
+						cursor: move;
+						padding-top: 8px;
+						padding-bottom: 8px;
+						border-bottom: 1px solid #444;
+					}
+					#add_miracle {
+						color: #333;
+						font-weight: 300;
+					}
+					#add_miracle input{
+						font-size: 15px;
+						font-weight: 400;
+					}
+					#add_miracle select{
+						font-size: 15px;
+						font-weight: 500;
+					}
+					.modal {
+    					overflow-y: auto;
+					}
+					.modal-open {
+					    overflow: 	auto;
+					    overflow-x:	hidden;
+					}
+
+					#miracle_controls, #resource_controls {
+						margin-left:200px; 
+						margin-right:200px;
+						//background: #FEFDEA;
+					}
+					#miracle_controls ul, #resource_controls ul {
+						//padding:	5px;
+						margin-left: 20%;
+					}
+					#miracle_controls li, #resource_controls li {
+						margin-left:	10px;
+						display: 		inline-block;
+						list-style: 	none;
+					}
+					.desc {
+
+						 display:inline-block;   
+						 margin-left:200px; 
+						 margin-right:200px;
+						 min-height: 400px;
+					}
+					.miracle_desc, .resource_desc {
+						 display:inline-block;   
+						 margin-left:200px; 
+						 margin-right:200px;
+						 min-height: 400px;
+						 width:		 720px;
+					}
+					.miracle_odd, .resource_odd {
+						background: #FAFAFA;
+						padding: 	25px;
+						border: 	1px solid #EEE;
+						//margin: 	10px;
+					}
+					.miracle_even, .resource_even {
+						//background: #FAFAFA;
+						padding: 	25px;
+						//border: 	2px solid #999;
+						//margin: 	10px;
+					}
+					.miracle_title, .resource_title {
+						color: 			#777;
+						//text-decoration: underline
+					}
+					.miracle_name {
+						color: 		rgb(110, 120, 240);
+						font-size: 	16px;
+						float: 		right;
+						padding-right: 	14px;
+					}
+					.miracle_date, .resource_date {
+						//float: 		right;
+						font-size: 	13px;
+						//padding: 	7px;
+					}	
+					.miracle_category, .resource_topic {
+						color: 		#777;
+						font-size: 	15px;
+						padding:	8px 12px 8px 12px;
+						background: #FEEDAD;
+						border-radius: 50px;
+						float: 		right;
+						margin-right: 5px;
+					}
+					.alert {
+					 padding: 8px 10px 8px 10px;
+  					 margin-bottom: 20px;
+  					 padding-left: 32%;
+   					 text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+   					 border: 1px solid transparent;
+   					 -webkit-border-radius: 4px;
+   					 -moz-border-radius: 4px;
+   					 border-radius: 4px;
+
+   					 /* change transition property to all */
+   					 -webkit-transition-property: all;
+   					 transition-property: all;
+					}
+					.alert-flash h4 {
+	   					 margin: 0;
+					}
+
+					.alert-flash .close {
+					    position: relative;
+					    top: -2px;
+					    right: -21px;
+					    line-height: 20px;
+					}
+				</style>
+	</head>
+	<body style="position: relative; overflow-x: hidden; background:#F2F2F2;font-family:Open Sans,sans-serif">
+		<section style="background:#FFF;margin-left:8%; margin-right:8%;margin-top:-7px">
+			<div class="topbar" style="font-size: 25px; background: #FEEDAD;padding:20px; height:80px">
+				<ul>			
+					<span class="textwidget"> Nemam Amma Bhagavan Temple </span>
+					<span class="textwidget" style="float: right;font-size: 17px;"> 
+						<i>
+							Om SatChitAnanda Parabrahma 
+							Purushoththama Paramatma <br/>
+							Sri Bhagavathi Sametha 
+							Sri Bhagavathe Namaha
+						</i>
+					</span> 
+				</ul> <!-- ul -->
+			</div> <!-- topbar -->
+
+			<div style="position: absolute; top: 130px; margin-left: 50%;">
+			  <img src="images/nemam_amma_bhagavan_temple.jpg" style="width:73.5%">
+			</div>
+			<div>
+			  <img src="images/sri_murti_1.jpg" class="img-responsive" style="width: 32.5%;margin-left: 100px;">
+			</div>
+		</section>		
+		<div id="nav" style="background:#FEEDAD;margin-right:8%;margin-left:8%; font-size:16px">
+			<ul style="margin-left:15%">		
+				<li  style="display:inline-block;padding:10px"> <a href="#/"> ABOUT </a> </li>
+				<li  style="display:inline-block;padding:10px"> <a href="#/pujas"> PUJAS </a> </li>
+				<li  style="display:inline-block;padding:10px"> <a href="#/location"> LOCATION </a> </li>
+				<li  style="display:inline-block;padding:10px"> <a href="#/miracles"> MIRACLES </a> </li>
+				<li  style="display:inline-block;padding:10px"> <a href="#/calendar"> CALENDAR </a> </li>
+				<li  style="display:inline-block;padding:10px"> <a href="#/resources"> RESOURCES </a> </li>
+				<li  style="display:inline-block;padding:10px"> <a href="#/contact"> CONTACT </a> </li>
+
+			</ul> 
+		</div> <!-- nav header-->
+	 	<div style="margin-right:8%;margin-left:8%;background:#FFF;margin-top:-1.2%; font-size: 15px; padding-top:20px;padding-bottom:100px" data-ng-view id="main-content"> 
+	 	</div> <!-- placeholder for angular routing -->
+	 	<div style="margin-left:8%;margin-right:8%; background: #FEEDAD; height:50px" id="admin_login"> 
+	 		<span style="float:right; padding:10px;"> 
+	 			<a href="#/adminLogin"  data-ng-show="!currentUser" class="btn btn-warning" > ADMIN LOGIN </a> 
+	 			<a href="#/adminLogout" data-ng-show="currentUser" class="btn btn-warning"> ADMIN LOGOUT </a> 
+	 		</span>
+
+	 	</div>
+	</body>
+</html>
