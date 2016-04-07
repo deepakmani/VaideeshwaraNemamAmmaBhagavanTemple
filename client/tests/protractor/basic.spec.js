@@ -18,7 +18,7 @@ describe('Nemam Amma Bhagavan Sharanam controller', function() {
 		var login_btn = $('.btn')[0];
 
 		// 2. Click login
-		browser.driver.click(login_btn);
+		login_btn.click();
 
 		// 3. Expect admin_login btn to be present
 		var admin_login_btn = $('#admin_login');
