@@ -39,7 +39,7 @@ describe("Get Miracles", function() {
 
 			// console.log("Nemam Amma Bhagavan Sharanam --  Res" + res.status);
 			done();
-                     expect(true).to.be.true
+                     expect(true).to.be.false
                });
       });
 });
