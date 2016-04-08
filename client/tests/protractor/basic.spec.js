@@ -26,5 +26,6 @@ describe('Nemam Amma Bhagavan Sharanam controller', function() {
 		// 4. Esnure the button exists
 		expect(admin_login_btn.length).to.equal(1);
 
-	});
+               console.log("Nemam Amma Bhagavan Sharanam -- great");
+ 	});
 });
