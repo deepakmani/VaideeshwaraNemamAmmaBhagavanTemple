@@ -13,7 +13,8 @@ describe('Nemam Amma Bhagavan Sharanam controller', function() {
 
 
 	it("should open the browser", function() {
-
+                console.log("Vaideeshwara Nemam Amma Bhagavan Sharanam");
+        
 		// 1. Get the login button
 		var login_btn = $('.btn')[0];
 
